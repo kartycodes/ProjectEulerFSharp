@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Primes.fs" />
     <Compile Include="Problem4.fs" />
+    <Compile Include="Problem5.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
