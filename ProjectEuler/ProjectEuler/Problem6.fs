@@ -14,6 +14,10 @@
 
 open Primes
 
+let naturalNumbers = 
+    let rec numberGen n = seq { yield n; yield! numberGen (n+1) }
+    numberGen 1
+
 let squares = naturalNumbers |> Seq.map (fun i -> i*i)
 
 let sumOfSquares n = 

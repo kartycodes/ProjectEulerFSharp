@@ -1,7 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
-open Problem6
+open Problem7
 open System.Diagnostics
 
 [<EntryPoint>]
