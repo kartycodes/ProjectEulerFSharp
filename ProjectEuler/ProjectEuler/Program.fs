@@ -1,13 +1,11 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
-open Primes
-open Problem5
+
+open Problem6
 open System.Diagnostics
 
 [<EntryPoint>]
 let main argv = 
-
-    printfn "%A" (smallestNumberDivisibleByAllNumbersTo 23)
 
     let watch = Stopwatch.StartNew()
     let answer = solution
