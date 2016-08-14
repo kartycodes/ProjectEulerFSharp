@@ -33,16 +33,17 @@ let getLength idx =
     else length - idx
 
 let productOfChars (str:string) = 
-    let product = str.ToCharArray()
-                  |> Array.fold  (fun acc c ->  acc * (int (Char.GetNumericValue c))) 1
-    product 
+    let product = str
+                  |> Seq.map (Char.GetNumericValue)  
+                  |> Seq.fold (*) 1.0
+    int64 product 
 
 let solution = 
     let (max,idx,imax) = godzillaNumberAsString.ToCharArray()
-                         |> Array.fold (fun (max:int, idx:int, iMax:int) c ->
+                         |> Array.fold (fun (max:int64, idx:int, iMax:int) c ->
                                      let current = productOfChars (godzillaNumberAsString.Substring(idx,(getLength idx)))
                                      if current > max then (current, idx+1, idx)
-                                     else (max,idx+1, iMax)) (0,0,0)
+                                     else (max,idx+1, iMax)) (0L,0,0)
 
     let lengthOfMax = getLength imax
     ((godzillaNumberAsString.Substring(imax, lengthOfMax)), max)
