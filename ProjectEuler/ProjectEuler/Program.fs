@@ -1,12 +1,11 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
-open Problem7
+open Problem10
 open System.Diagnostics
 
 [<EntryPoint>]
 let main argv = 
-
     let watch = Stopwatch.StartNew()
     let answer = solution
     watch.Stop()
