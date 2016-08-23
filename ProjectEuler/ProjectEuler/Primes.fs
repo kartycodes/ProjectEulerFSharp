@@ -27,13 +27,15 @@ let primes =
         |> Seq.filter isPrime
     Seq.append [2] primesGreaterThan2
 
-let primeFactorsOf n = 
-    let possiblePrimeFactors = primes |> Seq.takeWhile (fun i -> i <= int (n/2))
+let longPrimeFactorsOf (n : int64) = 
+    let possiblePrimeFactors = primes |> Seq.takeWhile (fun i -> i <= int (n/2L))
     let mutable remainder = n
     let mutable factors = []
 
     possiblePrimeFactors
-    |> Seq.iter (fun f -> while (remainder % f) = 0 do 
-                            remainder <- (remainder / f) 
+    |> Seq.iter (fun f -> while (remainder % (int64 f)) = 0L do 
+                            remainder <- (remainder / (int64 f)) 
                             factors <- f :: factors)
     factors
+
+let primeFactorsOf n = longPrimeFactorsOf (int64 n) |> Seq.map int
