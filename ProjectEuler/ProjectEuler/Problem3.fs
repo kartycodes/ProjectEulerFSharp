@@ -1,4 +1,4 @@
-﻿module Problem2
+﻿module Problem3
 
 open Primes
 

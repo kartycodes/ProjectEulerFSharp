@@ -10,4 +10,4 @@ let sumOfPrimesLessThan x =
     |> Seq.takeWhile (fun i -> i < x) 
     |> Seq.fold (fun acc i -> acc + (int64 i)) 0L
 
-let solution = sumOfPrimesLessThan 2000000
+let solution = sumOfPrimesLessThan 2000000L

@@ -14,16 +14,9 @@
 
 open Primes
 
-let mergeFactors (primeFactors: Map<int, int>) (factorsToMerge: int list) =
-    let factorMap = 
-        factorsToMerge
-        |> List.fold (fun (state:Map<int,int>) i -> 
-                        if (state.ContainsKey i) then 
-                            let count = state.[i]
-                            state.Add(i, (count+1))
-                        else state.Add(i,1)) Map.empty
+let mergeFactors (primeFactors: Map<int64, int>) (factorMap: Map<int64,int>) =
     factorMap
-    |> Map.fold (fun (state:Map<int,int>) key value -> 
+    |> Map.fold (fun (state:Map<int64,int>) key value -> 
                     if state.[key] < value then state.Add(key,value)
                     else state) primeFactors
                     
@@ -50,9 +43,9 @@ let smallestNumberDivisibleByAllNumbersTo n =
         |> Set.toList
     
     compositeNumbersToFactorize
-    |> List.iter (fun i -> primeFactors <- mergeFactors primeFactors (primeFactorsOf i))
+    |> List.iter (fun i -> primeFactors <- mergeFactors primeFactors (primeFactorsAsMap i))
 
     primeFactors
     |> Map.fold (fun (state: int64) key value -> state * (pown (int64 key) value)) 1L
     
-let solution = smallestNumberDivisibleByAllNumbersTo 20
+let solution = smallestNumberDivisibleByAllNumbersTo 20L
