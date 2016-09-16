@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Utils.fs" />
     <Compile Include="Primes.fs" />
     <Compile Include="Fibonacci.fs" />
     <Compile Include="Problem1.fs" />
@@ -62,6 +63,8 @@
     <Compile Include="Problem10.fs" />
     <Compile Include="Problem11.fs" />
     <Compile Include="Problem12.fs" />
+    <Compile Include="Problem13.fs" />
+    <Compile Include="Problem14.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
