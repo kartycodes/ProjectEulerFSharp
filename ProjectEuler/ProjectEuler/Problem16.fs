@@ -39,4 +39,4 @@ let sumBigIntRec n =
     
     
         
-let solution = sumBigIntRec 1000
+let solution = sumOfDigits 1000
