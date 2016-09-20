@@ -10,8 +10,8 @@ namespace ProjectEulerCSharp
     {
         static void Main(string[] args)
         {
-            Problem14 p14 = new Problem14();
-            p14.Run();
+            var p = new Problem18();
+            p.Run();
         }
     }
 }
