@@ -10,13 +10,12 @@ namespace ProjectEulerCSharp
     {
         public void Run()
         {
-            
             TreeNode root = BuildTree();
             var watch = Stopwatch.StartNew();
             root.CalculateMaxSubTree();
             watch.Stop();
             Console.WriteLine($"Max total = {root.MaxSubTree}");
-            Console.WriteLine($"Solution took {watch.ElapsedMilliseconds} ms");
+            Console.WriteLine($"Solution took {watch.ElapsedTicks / (float)TimeSpan.TicksPerMillisecond} ms");
         }
 
         string inputFile = "Problem18\\input67.txt";
