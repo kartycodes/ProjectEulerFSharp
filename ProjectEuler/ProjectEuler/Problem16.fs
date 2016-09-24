@@ -1,5 +1,7 @@
 ﻿module Problem16
 
+open Utils.Utils
+
 // doubles an integer, when integer is represented as a list of its digits.
 let rec double (digits: int list) (carry :int) =
     match digits with
@@ -30,13 +32,7 @@ let sumBigint n =
     sum
 
 // functional programming approach with bigint
-let sumBigIntRec n = 
-    let rec calcSum (b: bigint) (sum: int) =
-        match b with
-        | x when x = (bigint 0) -> sum
-        | x -> calcSum (x / (bigint 10)) ((int)(x % bigint 10) + sum)
-    calcSum (bigint.Pow((bigint 2), n)) 0 
-    
+let sumBigIntRec n = sumOfTheDigitsofABigInt (bigint.Pow((bigint 2), n))
     
         
 let solution = sumOfDigits 1000
