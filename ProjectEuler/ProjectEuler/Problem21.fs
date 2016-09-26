@@ -1,12 +1,6 @@
 ﻿module Problem21
 
-let properDivisorsOf n = seq {
-     for i in 1 .. (int (sqrt (double n))) do
-        if n % i = 0 then
-          yield i
-          if i <> 1 then
-            yield n / i 
-    } 
+open Utils.Divisors
 
 let amicablePairFor n = 
     let sumOfDivisors = properDivisorsOf n |> Seq.sum
@@ -19,14 +13,14 @@ let amicablePairFor n =
 let sumOfAmicablePairs n = 
     let rec amicablePairs x sum =
         match x with
-        | 1 -> sum
+        | 1L -> sum
         | n -> 
             match amicablePairFor n with
-            | Some(a) -> amicablePairs (x-1) (a+sum)
-            | None    -> amicablePairs (x-1) sum
-    amicablePairs n 0
+            | Some(a) -> amicablePairs (x-1L) (a+sum)
+            | None    -> amicablePairs (x-1L) sum
+    amicablePairs n 0L
 
-let solution = sumOfAmicablePairs 10000
+let solution = sumOfAmicablePairs 10000L
 
 
 

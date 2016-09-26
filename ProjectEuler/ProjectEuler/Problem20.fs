@@ -1,5 +1,5 @@
 ﻿module Problem20
-open Utils
+open Utils.Utils
 let rec factorial n =
     match n with 
     | x when x = (bigint 1) -> (bigint 1)
